@@ -11,14 +11,17 @@ fn main() {
                 let num_x = pair.iter().filter(|c| c == &&'x').count();
                 return match num_x {
                     1 => {
-                        return (*pair).iter().filter(|c| c != &&'x').map(|x| value(*x)).sum::<i32>() + 2;
+                        return (*pair)
+                            .iter()
+                            .filter(|c| c != &&'x')
+                            .map(|x| value(*x))
+                            .sum::<i32>()
+                            + 2;
                     }
                     2 => {
                         return value(*pair.iter().filter(|c| c != &&'x').next().unwrap());
                     }
-                    3 => {
-                        0
-                    }
+                    3 => 0,
                     _ => {
                         panic!();
                     }
